@@ -380,6 +380,11 @@ padding-top: 1rem;
   text-align: center; 
   margin-bottom: 8%;
   }
+
+  .project_title{
+  color: var(--first-color); 
+ 
+  }
   .skills_box{
     display: flex;
     justify-content: center;
@@ -681,3 +686,40 @@ color: var(--body-color);
               }
           
   }
+/* Add a fade-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation */
+.project_gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project_img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover; /* Ensures the image fills the area while maintaining aspect ratio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Triggering animation when element is in view */
+.project_img.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
